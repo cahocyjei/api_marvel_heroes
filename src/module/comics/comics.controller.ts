@@ -4,16 +4,16 @@ import { Public } from '../../config/config';
 import { AddComicListDto } from '../../dto/addComicListDto';
 import { ComicDto } from 'src/dto/comic.dto';
 
-@Controller('comics')
+@Controller('api')
 export class ComicsController {
   constructor(private readonly comicsService: ComicsService) { }
   @Public()
-  @Get('/marvel')
+  @Get('comics/marvel')
   async getComicsMarvel() {
     return await this.comicsService.getComicsMarvel();
   }
 
-  @Post('addList/:id')
+  @Post('comic/addList/:id')
   async addListComicUser(@Req() req: any, @Param('id') id: string, @Body('nameList') nameList: string) {
     const idUser: string = req.user.id;
     try {
@@ -50,7 +50,7 @@ export class ComicsController {
     }
   }
   //@Public()
-  @Get('mongodb')
+  @Get('comics/getlistUser')
   async getListComicsUser(@Request() req: any) {
     try {
       console.log(req.user.id);

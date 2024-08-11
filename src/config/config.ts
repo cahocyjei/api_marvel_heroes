@@ -3,9 +3,6 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 export default ()=>({
-  database:{
-    mongouri: process.env.MONGO_URI  as string,
-  }, 
   api:{
     jwtsecret: process.env.JWT_SECRET as string,
     port: parseInt(process.env.PORT),

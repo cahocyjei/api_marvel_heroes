@@ -4,14 +4,14 @@ import { Response } from 'express';
 import { LocalAuthGuard } from './strategys/local-auth.guard';
 import { Public } from '././config/config';
 
-@Controller('auth')
+@Controller('api')
 export class AppController {
   constructor(private authService: AuthService) { }
 
   @HttpCode(HttpStatus.OK)
   @UseGuards(LocalAuthGuard)
   @Public()
-  @Post('login')
+  @Post('auth/login')
   async login(@Request() req: any) {
     return await this.authService.login(req.user);
   }
@@ -23,7 +23,7 @@ export class AppController {
     res.send('Sesion Cerrada');
   }
   //@Public()
-  @Get('profile')
+  @Get('auth/profile')
   getProfile(@Request() req: any) {
     console.log(req.user);
     return req.user;

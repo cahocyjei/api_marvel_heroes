@@ -5,7 +5,7 @@ import { User } from './user.schema';
 import { Public } from '../../config/config'
 
 
-@Controller()
+@Controller('api')
 export class UserController {
   constructor(private userService: UserService) { }
 

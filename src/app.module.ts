@@ -18,7 +18,7 @@ import Configuration from './config/config'
   MongooseModule.forRootAsync({
     imports: [ConfigModule],
     useFactory: async (configService: ConfigService) => ({
-      uri: configService.get<string>('database.mongouri'),
+      uri: configService.get<string>('MONGODB_URI'),
     }),
     inject:[ConfigService],
   }),
