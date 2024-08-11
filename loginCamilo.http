@@ -1,7 +1,0 @@
-POST http://localhost:3000/api/auth/login
-Content-Type: application/json
-
-{
-  "name": "Jeiman",
-  "document": "1142921658"
-}
