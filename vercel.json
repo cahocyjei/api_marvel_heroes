@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/main.ts"
+    }
+  ],
+  "env": {
+    "MONGODB_URI": "mongodb+srv://vercel-admin-user-66b9f3d71192d71da2bec334:DuPXOhd1ItfJAaep@cluster0.k58zz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "JWT_SECRET": "*W1914jjj",
+    "NODE_ENV": "production",
+    "PUBLICKEY_MARVEL": "10c0621b0acb9b3fb932635c07230904",
+    "PRIVATEKEY_MARVEL": "3f57764f983ff41ba0bc17e625bee3f1e47ae94f",
+    "URL_MARVEL": "https://gateway.marvel.com:443/v1/public/characters"
+  }
+}
